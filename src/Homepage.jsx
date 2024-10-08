@@ -44,7 +44,7 @@ function Homepage({ showDescription }) {
                                     {item.name} <br /> ({item.record})
                                 </button>
 
-                                <img className="card-img-bottom" src="/bridge/bridge.jpg" alt="bridge" />
+                                <img className="card-img-bottom" src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} />
 
                             </div>
                         ))
