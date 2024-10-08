@@ -85,13 +85,13 @@ function BridgeDetail({ detail, showDetail, Close }) {
                         {/* The slideshow/carousel */}
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src="/bridge/bridge.jpg" alt={bridgeData.name} className="d-block img-Carousel" style={{ width: '100%' }} />
+                                <img src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} alt={bridgeData.name} className="d-block img-Carousel" style={{ width: '100%' }} />
                             </div>
                             <div className="carousel-item">
-                                <img src="/bridge/bridge.jpg" alt={bridgeData.name} className="d-block img-Carousel" style={{ width: '100%' }} />
+                                <img src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} alt={bridgeData.name} className="d-block img-Carousel" style={{ width: '100%' }} />
                             </div>
                             <div className="carousel-item">
-                                <img src="/bridge/bridge.jpg" alt={bridgeData.name} className="d-block img-Carousel" style={{ width: '100%' }} />
+                                <img src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} alt={bridgeData.name} className="d-block img-Carousel" style={{ width: '100%' }} />
                             </div>
                         </div>
 
@@ -106,7 +106,7 @@ function BridgeDetail({ detail, showDetail, Close }) {
 
                     <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xll-4">
                         <video className="img-Carousel" controls>
-                            <source src="/bridge/bridge.mp4" type="video/mp4" />
+                        <source src={`${process.env.PUBLIC_URL}/bridge/bridge.mp4`} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

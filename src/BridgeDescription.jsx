@@ -14,7 +14,7 @@ function BridgeDescription({ Close, item }) {
         <div className="con-modal">
             <div className="row form-description">
                 <div className="col-md-12 col-lg-6 col-xl-6 col-xll-6">
-                    <img className="img-description" src="/bridge/bridge.jpg" alt="bridge" />
+                    <img className="img-description" src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} alt="bridge" />
                 </div>
                 <form className="con-bnt-form col-md-12 col-lg-6 col-xl-6 col-xll-6">
                     <h2 className="card-title">{item.name}</h2>

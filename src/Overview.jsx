@@ -36,7 +36,7 @@ function Overview({ showDescription }) {
                                     {item.name}
                                 </button>
 
-                                <img className="card-img-bottom" src="/bridge/bridge.jpg" alt="bridge" />
+                                <img className="card-img-bottom" src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} alt="bridge" />
 
                             </div>
                         ))
