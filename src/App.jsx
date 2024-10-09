@@ -43,7 +43,7 @@ function App() {
         <Route path='/detail' element={<BridgeDetail showDetail={showDetail} detail={detail} Close={Close} />} />
         <Route path='/bridgelist' element={<BridgeList />} />
         <Route path='/aboutus' element={<AboutUs />} />
-        <Route path="*" element={<Homepage showDescription={showDescription} />} />
+        <Route path="*" element={<Navigate to="/" />} />
 
       </Routes>
 
