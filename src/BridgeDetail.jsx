@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Detail from "./Detail";
+import { FAQ } from "./FAQ";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import StraightenIcon from '@mui/icons-material/Straighten';
@@ -11,7 +12,9 @@ import PublicIcon from '@mui/icons-material/Public';
 
 
 
-function BridgeDetail({ detail, showDetail, Close }) {
+
+
+function BridgeDetail({ faq, detail, showDetail, showFAQ, Close }) {
     const [bridgeData, setBridgeData] = useState(null);
 
     // Khi component render, lấy dữ liệu từ localStorage
@@ -29,15 +32,15 @@ function BridgeDetail({ detail, showDetail, Close }) {
     return (
         <div className="con">
             <div className="imgDetail">
-                <h1 className="title">{bridgeData.name}<br />({bridgeData.continent} <PublicIcon style={{ fontSize: '1em', filter: 'drop-shadow(5px 5px 10px #212529)'}} />)</h1>
-                
+                <h1 className="title">{bridgeData.name}<br />({bridgeData.continent} <PublicIcon style={{ fontSize: '1em', filter: 'drop-shadow(5px 5px 10px #212529)' }} />)</h1>
+
                 <button className="btn" onClick={showDetail}>Detail</button>
             </div>
-            
+
 
             <div className="summary">
                 <p>
-                    <h2><SummarizeIcon style={{ fontSize: '1em'}} /> Summary:</h2> <h4>{bridgeData.summary}</h4>
+                    <h2><SummarizeIcon style={{ fontSize: '1em' }} /> Summary:</h2> <h4>{bridgeData.summary}</h4>
                 </p>
             </div>
 
@@ -66,7 +69,7 @@ function BridgeDetail({ detail, showDetail, Close }) {
                 <div className="row">
                     <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xll-4">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.325316305308!2d106.66372207578533!3d10.786376989363008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed23c80767d%3A0x5a981a5efee9fd7d!2zNTkwIMSQLiBDw6FjaCBN4bqhbmcgVGjDoW5nIDgsIFBoxrDhu51uZyAxMSwgUXXhuq1uIDMsIEjhu5MgQ2jDrCBNaW5oIDcwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1728039149078!5m2!1svi!2s"
+                            src={bridgeData.map}
                             className="img-Carousel"
                             allowFullScreen
                             loading="lazy"
@@ -105,15 +108,21 @@ function BridgeDetail({ detail, showDetail, Close }) {
                     </div>
 
                     <div className="col-12 col-md-4 col-lg-4 col-xl-4 col-xll-4">
-                        <video className="img-Carousel" controls>
-                        <source src={`${process.env.PUBLIC_URL}/bridge/bridge.mp4`} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe
+                            className="img-Carousel"
+                            src={bridgeData.video}
+                            title="video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        ></iframe>
                     </div>
 
                 </div>
             </div>
-            {detail && <Detail Close={Close} bridgeData={bridgeData} />}
+            {detail && <Detail Close={Close} bridgeData={bridgeData} showFAQ={showFAQ} />}
+            {faq && <FAQ Close={Close} bridgeData={bridgeData} />}
 
         </div>
     );

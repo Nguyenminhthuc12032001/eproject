@@ -2,6 +2,8 @@
 import { useLocation } from 'react-router-dom';
 import data from './data.json';
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBridge } from '@fortawesome/free-solid-svg-icons';
 
 function Overview({ showDescription }) {
 
@@ -26,15 +28,14 @@ function Overview({ showDescription }) {
         <div className="con">
             <div id="mostFamous">
                 <h2>{Bridges}</h2>
-                <hr />
                 <div className="row">
                     {
                         list.map((item) => (
                             <div className="card col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xll-2">
 
                                 <button className="titile-card" onClick={() => showDescription(item)}>
-                                    {item.name}
-                                </button>
+                                    <FontAwesomeIcon icon={faBridge} /> {item.name}
+                                    </button>
 
                                 <img className="card-img-bottom" src={`${process.env.PUBLIC_URL}/bridge/bridge.jpg`} alt="bridge" />
 

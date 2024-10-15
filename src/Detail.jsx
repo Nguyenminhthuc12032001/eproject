@@ -10,8 +10,9 @@ import EventIcon from '@mui/icons-material/Event';
 import NaturePeopleIcon from '@mui/icons-material/NaturePeople';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBridge } from '@fortawesome/free-solid-svg-icons';
+import HelpIcon from '@mui/icons-material/Help';
 
-function Detail({ Close, bridgeData }) {
+function Detail({ Close, bridgeData, showFAQ }) {
     return (
         <div className="con-modal">
             <div className="form-detail">
@@ -48,6 +49,12 @@ function Detail({ Close, bridgeData }) {
                 <div className="btn-detail">
                     <button type="button" className="btn" onClick={Close}>
                         <CloseIcon />
+                    </button>
+                </div>
+
+                <div className="btn-FAQ">
+                    <button type="button" className="btn" onClick={showFAQ}>
+                        <HelpIcon />
                     </button>
                 </div>
 
